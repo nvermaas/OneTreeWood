@@ -16,7 +16,7 @@ const particleOptions: ParticleOptions = {
         // Make a particle for this pixel if blue > 50 (range 0-255)
         return pixel.b > 50;
     },
-    color: ({ x, y, image }) => "white",
+    color: ({ x, y, image }) => "lightgrey",
     radius: () => Math.random() * 1.5 + 0.5,
     mass: () => 40,
     friction: () => 0.15,
@@ -26,7 +26,7 @@ const particleOptions: ParticleOptions = {
 };
 
 const motionForce = (x: number, y: number): ParticleForce => {
-    return forces.disturbance(x, y, 5);
+    return forces.disturbance(x, y, 15);
 };
 
 // the Home page
@@ -36,15 +36,13 @@ export function About() {
         <div className="App">
 
             <header >
-                <h2>
-                    OneTreeWood
-                </h2>
+                <h1></h1>
                 <ParticleImage
                     src={logo}
                     width="400"
                     height="400"
                     scale={0.2}
-                    entropy={20}
+                    entropy={5}
                     maxParticles={15000}
                     particleOptions={particleOptions}
                     mouseMoveForce={motionForce}
@@ -53,6 +51,9 @@ export function About() {
                 />
 
             </header>
+            <h1>
+                OneTreeWood
+            </h1>
         </div>
     );
 }

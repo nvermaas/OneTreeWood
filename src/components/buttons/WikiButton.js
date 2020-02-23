@@ -11,9 +11,9 @@ export default function WikiButton(props) {
         return null
     }
 
-    let renderIcon = faHiking
-    if (props.item.parent==='it-projects') {
-        renderIcon = faCloud
+    let renderIcon = faCloud
+    if ((props.item.parent==='hiking') | (props.item.parent==='travel')) {
+        renderIcon = faHiking
     }
 
     return (

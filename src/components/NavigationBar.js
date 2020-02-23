@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from '../assets/tree9.png';
 import { useGlobalReducer } from '../Store';
 import { NavLink } from "react-router-dom"
@@ -42,6 +42,41 @@ function ITProjectsLink(props) {
     }
 }
 
+function AllProjectsLink(props) {
+    if (props.status==='data_is_fetched') {
+        return <NavDropdown.Item as={NavLink} to="/it-projects">All</NavDropdown.Item>
+        //return <NavDropdown.Item  href="/it-projects/websites">Websites</NavDropdown.Item>
+
+    } else {
+        return <NavDropdown disabled >All</NavDropdown>
+    }
+}
+
+function WebsitesLink(props) {
+    if (props.status==='data_is_fetched') {
+        return <NavDropdown.Item as={NavLink} to="/websites">Websites (static html)</NavDropdown.Item>
+        //return <NavDropdown.Item  href="/it-projects/websites">Websites</NavDropdown.Item>
+
+    } else {
+        return <NavDropdown disabled >Websites</NavDropdown>
+    }
+}
+
+function FrontendLink(props) {
+    if (props.status==='data_is_fetched') {
+        return <NavDropdown.Item as={NavLink} to="/frontends">Frontends (React/Javascript)</NavDropdown.Item>
+
+    } else {
+        return <NavDropdown disabled >Frontends</NavDropdown>
+    }
+}
+function BackendLink(props) {
+    if (props.status==='data_is_fetched') {
+        return <NavDropdown.Item as={NavLink} to="/backends">Backends (Django/Python)</NavDropdown.Item>
+    } else {
+        return <NavDropdown disabled >Backends</NavDropdown>
+    }
+}
 function AstronomyLink(props) {
     if (props.status==='data_is_fetched') {
         return <Nav.Link as={NavLink} to="/astronomy">Astronomy</Nav.Link>
@@ -73,7 +108,15 @@ export function NavigationBar() {
                 <HikingLink status={my_state.status}/>
                 <MusicLink status={my_state.status}/>
                 <AstronomyLink status={my_state.status}/>
-                <ITProjectsLink status={my_state.status}/>
+
+                <NavDropdown title="IT Projects" id="collasible-nav-dropdown">
+                    <AllProjectsLink status={my_state.status} />
+                    <NavDropdown.Divider />
+                    <WebsitesLink status={my_state.status} />
+                    <FrontendLink status={my_state.status} />
+                    <BackendLink status={my_state.status} />
+                </NavDropdown>
+
                 <Nav.Link as={NavLink} to="/about">About</Nav.Link>
             </Nav>
             &nbsp;

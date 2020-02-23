@@ -9,6 +9,11 @@ import { NavigationBar } from './NavigationBar';
 import { HomePage } from '../routes/home/HomePage';
 import ObservationDetails from '../routes/details/ObservationDetails';
 import ITProjectsPage from '../routes/it-projects/ITProjectsPage';
+import WebsitesPage from '../routes/websites/WebsitesPage';
+import FrontendPage from '../routes/frontend/FrontendPage';
+import BackendPage from '../routes/backend/BackendPage';
+
+
 import MusicPage from '../routes/music/MusicPage';
 import TravelPage from '../routes/travel/TravelPage';
 import HikingPage from '../routes/hiking/HikingPage';
@@ -74,6 +79,18 @@ function Main () {
 
                     <Route path="/it-projects">
                         <ITProjectsPage />
+                    </Route>
+
+                    <Route path="/websites">
+                        <WebsitesPage />
+                    </Route>
+
+                    <Route path="/frontends">
+                        <FrontendPage />
+                    </Route>
+
+                    <Route path="/backends">
+                        <BackendPage />
                     </Route>
 
                     <Route path="/astronomy">
