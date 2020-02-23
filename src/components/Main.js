@@ -9,6 +9,11 @@ import { NavigationBar } from './NavigationBar';
 import { Home } from './Home';
 import ObservationsPage from '../routes/observations/ObservationsPage';
 import ObservationDetails from '../routes/details/ObservationDetails';
+import ITProjectsPage from '../routes/it-projects/ITProjectsPage';
+import MusicPage from '../routes/music/MusicPage';
+import TravelPage from '../routes/travel/TravelPage';
+import HikingPage from '../routes/hiking/HikingPage';
+import AstronomyPage from '../routes/astronomy/AstronomyPage';
 
 import { About } from './About';
 
@@ -66,6 +71,25 @@ function Main () {
                         <ObservationsPage />
                     </Route>
 
+                    <Route path="/travel">
+                        <TravelPage />
+                    </Route>
+
+                    <Route path="/hiking">
+                        <HikingPage />
+                    </Route>
+
+                    <Route path="/music">
+                        <MusicPage />
+                    </Route>
+
+                    <Route path="/it-projects">
+                        <ITProjectsPage />
+                    </Route>
+
+                    <Route path="/astronomy">
+                        <AstronomyPage />
+                    </Route>
 
                     <Route path="/about">
                         <About />

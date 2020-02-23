@@ -54,15 +54,22 @@
 }
 
 .card-telescope {
-  display: flex;
-  width: 40vh;
-  height: 35vw;
-}
+    display: flex;
+    width: 40vh;
+    height: 35vw;
+  }
 
 .card-query {
   display: inline;
   align-items: flex-start;
   justify-content: inherit;
+  background-color: lightgrey;
+}
+
+.card-item {
+  display: flex;
+  width: 45vh;
+  height: 28vw;
   background-color: lightgrey;
 }
 
