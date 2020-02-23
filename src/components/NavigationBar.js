@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Navbar, Nav } from 'react-bootstrap';
-import logo from '../assets/logo.ico';
+import logo from '../assets/tree9.png';
 import { useGlobalReducer } from '../Store';
 import { NavLink } from "react-router-dom"
 
@@ -65,14 +65,14 @@ export function NavigationBar() {
     return (
         <Navbar bg="dark" variant="dark">
 
-            <img alt='' src={logo} width="30" height="30" className="d-inline-block align-top"/>
+            <img alt='' src={logo} width="40" height="40" className="d-inline-block align-top"/>
 
-            <Navbar.Brand href="/">&nbsp;One Tree Wood </Navbar.Brand>
+            <Navbar.Brand href="/">&nbsp;OneTreeWood </Navbar.Brand>
             <Nav className="mr-auto">
-                <AstronomyLink status={my_state.status}/>
-                <HikingLink status={my_state.status}/>
                 <TravelLink status={my_state.status}/>
+                <HikingLink status={my_state.status}/>
                 <MusicLink status={my_state.status}/>
+                <AstronomyLink status={my_state.status}/>
                 <ITProjectsLink status={my_state.status}/>
                 <Nav.Link as={NavLink} to="/about">About</Nav.Link>
             </Nav>

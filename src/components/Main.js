@@ -6,8 +6,7 @@ import { useGlobalReducer } from '../Store';
 import { useFetchData } from '../hooks/useFetchData';
 
 import { NavigationBar } from './NavigationBar';
-import { Home } from './Home';
-import ObservationsPage from '../routes/observations/ObservationsPage';
+import { HomePage } from '../routes/home/HomePage';
 import ObservationDetails from '../routes/details/ObservationDetails';
 import ITProjectsPage from '../routes/it-projects/ITProjectsPage';
 import MusicPage from '../routes/music/MusicPage';
@@ -15,7 +14,7 @@ import TravelPage from '../routes/travel/TravelPage';
 import HikingPage from '../routes/hiking/HikingPage';
 import AstronomyPage from '../routes/astronomy/AstronomyPage';
 
-import { About } from './About';
+import { About } from '../routes/about/About';
 
 
 
@@ -41,16 +40,10 @@ function Main () {
     // use global state
     const [ my_state , my_dispatch] = useGlobalReducer()
 
-    // a timer is used for a 60 second polling of the data.
-    const [timer, setTimer] = useState(undefined)
-
-    //useFetchObservations(get_backend_url("/altapi/observations"),{onMount:true, mode:'no-cors'})
-    // useFetchReleases(get_backend_url("/altapi/releases"),{onMount:true, mode:'no-cors'})
-    // http://80.101.27.83/homebase/datacenter/items/
     useFetchData("http://80.101.27.83/homebase/datacenter/items/",{onMount:true})
 
     return (
-        <Router basename="alta-components">
+        <Router basename="">
             <div>
                 <NavigationBar/>
 
@@ -64,11 +57,7 @@ function Main () {
 
                 <Switch>
                     <Route exact path="/">
-                        <Home />
-                    </Route>
-
-                    <Route path="/observations">
-                        <ObservationsPage />
+                        <HomePage />
                     </Route>
 
                     <Route path="/travel">
