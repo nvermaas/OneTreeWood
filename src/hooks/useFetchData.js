@@ -14,15 +14,16 @@ export const useFetchData = (url, options) => {
     const fetchData = async (url) => {
         try {
             // dispatch the status to the global state
-            //alert('useFetchReleases('+url+')')
+            //alert('useFetchData('+url+')')
             my_dispatch({type: SET_STATUS, status: 'fetching '+url})
             const res = await fetch(url, options);
             const json = await res.json();
             setResponse(json);
 
             // dispatch the fetched data and the status to the global state
-            my_dispatch({type: SET_FETCHED_DATA, fetched_data: json.results})
+            my_dispatch({type: SET_FETCHED_DATA, fetched_data: json})
             my_dispatch({type: SET_STATUS, status: 'data_is_fetched'})
+
         } catch (error) {
             setError(error);
             my_dispatch({type: SET_STATUS, status: 'error'})

@@ -110,7 +110,7 @@ function Main () {
                 </Switch>
             </div>
 
-            <footer><small>(C) Nico Vermaas - version 1.0 - 23 feb 2020</small></footer>
+            <footer><small>(C) Nico Vermaas - version 1.1 - 26 jun 2020</small></footer>
         </Router>
     );
 }
