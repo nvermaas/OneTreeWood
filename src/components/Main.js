@@ -45,7 +45,8 @@ function Main () {
     // use global state
     const [ my_state , my_dispatch] = useGlobalReducer()
 
-    useFetchData("http://80.101.27.83/homebase/datacenter/items/",{onMount:true})
+    // useFetchData("http://80.101.27.83/homebase/datacenter/items/",{onMount:true})
+    useFetchData("https://uilennest.net/homebase/datacenter/items/",{onMount:true})
 
     return (
         <Router basename="">
@@ -110,7 +111,7 @@ function Main () {
                 </Switch>
             </div>
 
-            <footer><small>(C) Nico Vermaas - version 1.1 - 26 jun 2020</small></footer>
+            <footer><small>(C) Nico Vermaas - version 1.2 - 7 aug 2021</small></footer>
         </Router>
     );
 }

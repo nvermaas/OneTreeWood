@@ -1,4 +1,18 @@
-Options -MultiViews
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.html [QSA,L]
+    Options +FollowSymLinks
+
+#    RewriteRule ^index\.html$ - [L]
+
+# BEGIN uilennest website
+# enable with : sudo a2enmod rewrite
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.html$ - [L]
+
+# Include in the next line all folders to exclude
+RewriteCond %{REQUEST_URI}  !(astroview) [NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
+# END uilennest
