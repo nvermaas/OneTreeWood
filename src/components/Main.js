@@ -13,12 +13,11 @@ import ITProjectsPage from '../routes/it-projects/ITProjectsPage';
 import WebsitesPage from '../routes/websites/WebsitesPage';
 import FrontendPage from '../routes/frontend/FrontendPage';
 import BackendPage from '../routes/backend/BackendPage';
-
-
 import MusicPage from '../routes/music/MusicPage';
 import TravelPage from '../routes/travel/TravelPage';
 import HikingPage from '../routes/hiking/HikingPage';
 import AstronomyPage from '../routes/astronomy/AstronomyPage';
+import AllPage from '../routes/all/AllPage';
 
 import { About } from '../routes/about/About';
 
@@ -69,6 +68,10 @@ function Main () {
                         <HomePage />
                     </Route>
 
+                    <Route path="/all">
+                        <AllPage />
+                    </Route>
+
                     <Route path="/travel">
                         <TravelPage />
                     </Route>
@@ -114,7 +117,7 @@ function Main () {
                 </Switch>
 
 
-            <footer><small>(C) Nico Vermaas - version 1.2 - 15 aug 2021</small></footer>
+            <footer><small>(C) Nico Vermaas - version 1.2 - 15 aug 2021 - 17:!5</small></footer>
 
             </div>
         </Router>

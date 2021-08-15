@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from '../assets/tree9.png';
 import { useGlobalReducer } from '../Store';
 import { NavLink } from "react-router-dom"
@@ -8,6 +8,14 @@ import { NavLink } from "react-router-dom"
 function getLink(taskid) {
     let details_link = "/details/" + taskid
     return details_link
+}
+
+function AllLink(props) {
+    if (props.status==='data_is_fetched') {
+        return <Nav.Link as={NavLink} to="/all">All</Nav.Link>
+    } else {
+        return <Nav.Link disabled >All</Nav.Link>
+    }
 }
 
 function TravelLink(props) {
@@ -98,12 +106,14 @@ export function NavigationBar() {
     const [ my_state , my_dispatch] = useGlobalReducer()
 
     return (
+<Container fluid>
         <Navbar bg="dark" variant="dark">
 
             <img alt='' src={logo} width="40" height="40" className="d-inline-block align-top"/>
 
             <Navbar.Brand href="/">&nbsp;OneTreeWood </Navbar.Brand>
             <Nav className="mr-auto">
+                <AllLink status={my_state.status}/>
                 <TravelLink status={my_state.status}/>
                 <HikingLink status={my_state.status}/>
                 <MusicLink status={my_state.status}/>
@@ -122,6 +132,6 @@ export function NavigationBar() {
             &nbsp;
 
         </Navbar>
-
+</Container>
     );
 }
