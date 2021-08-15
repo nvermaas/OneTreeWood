@@ -117,7 +117,7 @@ function Main () {
                 </Switch>
 
 
-            <footer><small>(C) Nico Vermaas - version 1.2 - 15 aug 2021 - 17:!5</small></footer>
+            <footer><small>(C) Nico Vermaas - version 1.2 - 15 aug 2021 - 17:15</small></footer>
 
             </div>
         </Router>
