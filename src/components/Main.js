@@ -1,4 +1,5 @@
 import React, {useState, useEffect }  from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../App.css';
 
 import { get_backend_url } from '../utils/web'
@@ -50,7 +51,9 @@ function Main () {
 
     return (
         <Router basename="">
+
             <div>
+
                 <NavigationBar/>
 
                 {/*
@@ -109,9 +112,11 @@ function Main () {
 
                     <Route path="/details/:id" children={<ObservationDetailsForward />} />
                 </Switch>
-            </div>
 
-            <footer><small>(C) Nico Vermaas - version 1.2 - 7 aug 2021</small></footer>
+
+            <footer><small>(C) Nico Vermaas - version 1.2 - 15 aug 2021</small></footer>
+
+            </div>
         </Router>
     );
 }
