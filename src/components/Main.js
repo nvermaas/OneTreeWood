@@ -50,7 +50,7 @@ function Main () {
 
     return (
         <Router basename="">
-
+            <Container fluid>
             <div>
 
                 <NavigationBar/>
@@ -117,9 +117,10 @@ function Main () {
                 </Switch>
 
 
-            <footer><small>(C) Nico Vermaas - version 1.2 - 15 aug 2021 - 17:15</small></footer>
+            <footer><small>(C) Nico Vermaas - version 1.2 - 24 nov 2021 - 20:00</small></footer>
 
             </div>
+            </Container>
         </Router>
     );
 }

@@ -109,16 +109,22 @@ export function NavigationBar() {
 <Container fluid>
         <Navbar bg="dark" variant="dark">
 
-            <img alt='' src={logo} width="40" height="40" className="d-inline-block align-top"/>
-
-            <Navbar.Brand href="/">&nbsp;OneTreeWood </Navbar.Brand>
+            <div className="d-none d-md-block d-lg-block d-xl-block">
+                <img alt='' src={logo} width="40" height="40" className="d-inline-block align-top"/>
+                <Navbar.Brand href="/">&nbsp;OneTreeWood </Navbar.Brand>
+            </div>
             <Nav className="mr-auto">
                 <AllLink status={my_state.status}/>
                 <TravelLink status={my_state.status}/>
+                <div className="d-none d-md-block d-lg-block d-xl-block">
                 <HikingLink status={my_state.status}/>
-                <MusicLink status={my_state.status}/>
+                </div>
+                <div className="d-none d-md-block d-lg-block d-xl-block">
+                    <MusicLink status={my_state.status}/>
+                </div>
+                <div className="d-none d-md-block d-lg-block d-xl-block">
                 <AstronomyLink status={my_state.status}/>
-
+                </div>
                 <NavDropdown title="IT Projects" id="collasible-nav-dropdown">
                     <AllProjectsLink status={my_state.status} />
                     <NavDropdown.Divider />
