@@ -106,7 +106,7 @@ export function NavigationBar() {
     const [ my_state , my_dispatch] = useGlobalReducer()
 
     return (
-<Container fluid>
+        <Container fluid>
         <Navbar bg="dark" variant="dark">
 
             <div className="d-none d-md-block d-lg-block d-xl-block">
@@ -138,6 +138,6 @@ export function NavigationBar() {
             &nbsp;
 
         </Navbar>
-</Container>
+        </Container>
     );
 }
