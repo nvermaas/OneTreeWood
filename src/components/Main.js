@@ -117,7 +117,7 @@ function Main () {
                 </Switch>
 
 
-            <footer><small>(C) Nico Vermaas - 29 nov 2023</small></footer>
+            <footer><small>(C) Nico Vermaas - 1 jun 2024</small></footer>
 
             </div>
             </Container>
