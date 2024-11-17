@@ -1,14 +1,14 @@
 name: build-deploy
 on: [push]
 jobs:
-  build-deploy-homebase:
+  build-deploy-onetreewood:
     runs-on: ubuntu-latest
     steps:
       - name: execute build & deploy procedure on mintbox
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.MY_HOST }}
-          username: ${{ secrets.MY_USERNAME }}
+          username: ${{ secrets.MY_USER }}
           password: ${{ secrets.MY_PASSWORD }}
           #key: ${{ secrets.MY_PRIVATE_KEY }}
           script: |
