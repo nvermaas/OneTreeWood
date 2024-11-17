@@ -1,4 +1,4 @@
-name: build-deploy
+name: build-deploy-nomad
 on: [push]
 jobs:
   build-deploy-onetreewood:
@@ -24,5 +24,5 @@ jobs:
             
             # deploy with nomad
             cd $HOME/my_nomad_datacenter/jobs
-            nomad stop onetreewood 
+            nomad stop one-tree-wood 
             nomad run onetreewood.nomad
