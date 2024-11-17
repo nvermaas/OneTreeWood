@@ -19,8 +19,8 @@ jobs:
             docker build -t onetreewood:latest .
             
             # tag for nomad, which uses rootful docker, so needs a pull from a repo
-            docker tag onetreewood:latest middle-earth:5000/onetreewood:latest
-            docker push middle-earth:5000/onetreewood:latest
+            docker tag onetreewood:latest localhost:5000/onetreewood:latest
+            docker push localhost:5000/onetreewood:latest
             
             # deploy with nomad
             cd $HOME/my_nomad_datacenter/jobs
