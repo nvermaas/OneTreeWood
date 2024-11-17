@@ -1,0 +1,28 @@
+name: build-deploy
+on: [push]
+jobs:
+  build-deploy-homebase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute build & deploy procedure on mintbox
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MY_HOST }}
+          username: ${{ secrets.MY_USERNAME }}
+          password: ${{ secrets.MY_PASSWORD }}
+          #key: ${{ secrets.MY_PRIVATE_KEY }}
+          script: |
+            cd ~/my_docker/OneTreeWood
+            git pull
+            npm install
+            npm run build
+            docker build -t onetreewood:latest .
+            
+            # tag for nomad, which uses rootful docker, so needs a pull from a repo
+            docker tag onetreewood:latest middle-earth:5000/onetreewood:latest
+            docker push middle-earth:5000/onetreewood:latest
+            
+            # deploy with nomad
+            cd $HOME/my_nomad_datacenter/jobs
+            nomad stop onetreewood 
+            nomad run onetreewood.nomad
