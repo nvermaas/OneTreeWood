@@ -42,6 +42,15 @@ function MusicLink(props) {
     }
 }
 
+function CVLink(props) {
+    if (props.status==='data_is_fetched') {
+        return <Nav.Link target="_blank" href="https://uilennest.net/cv/">CV & Portfolio</Nav.Link>
+
+    } else {
+        return <Nav.Link disabled >CV & Portfolio</Nav.Link>
+    }
+}
+
 function ITProjectsLink(props) {
     if (props.status==='data_is_fetched') {
         return <Nav.Link as={NavLink} to="/it-projects">IT Projects</Nav.Link>
@@ -116,22 +125,14 @@ export function NavigationBar() {
             <Nav className="mr-auto">
                 <AllLink status={my_state.status}/>
                 <TravelLink status={my_state.status}/>
-                <div className="d-none d-md-block d-lg-block d-xl-block">
-                <HikingLink status={my_state.status}/>
-                </div>
+
                 <div className="d-none d-md-block d-lg-block d-xl-block">
                     <MusicLink status={my_state.status}/>
                 </div>
                 <div className="d-none d-md-block d-lg-block d-xl-block">
-                <AstronomyLink status={my_state.status}/>
+                    <CVLink status={my_state.status}/>
                 </div>
-                <NavDropdown title="IT Projects" id="collasible-nav-dropdown">
-                    <AllProjectsLink status={my_state.status} />
-                    <NavDropdown.Divider />
-                    <WebsitesLink status={my_state.status} />
-                    <FrontendLink status={my_state.status} />
-                    <BackendLink status={my_state.status} />
-                </NavDropdown>
+
 
                 <Nav.Link as={NavLink} to="/about">About</Nav.Link>
             </Nav>
